@@ -13,10 +13,10 @@ Author: Sravya Ganugapati
     1. [Oracle Big Data Cloud](#Oracle-Big-Data-Cloud)
     1. [Oracle Cloud Infrastructure Object Storage](#Oracle-Cloud-Infrastructure-Object-Storage)
     1. [Oracle Data Visualization Desktop](#Oracle-Data-Visualization-Desktop)
-3. [Uscase #1: Relational data to Oracle Autonomous Data Warehouse Cloud using Oracle Data Integration Platform Cloud](##Usecase-#1:-Relational-data-to-Oracle-Autonomous-Data-Warehouse-Cloud-using-Oracle-Data-Integration-Platform-Cloud)
-4. [Uscase #2: Big data to Oracle Autonomous Data Warehouse Cloud using Oracle Data Lake](#usecase-#2:-Big-data-to-Oracle-Autonomous-Data-Warehouse-Cloud-using-Oracle-Data-Lake)
+3. [Uscase #1: Relational data to Oracle Autonomous Data Warehouse Cloud using Oracle Data Integration Platform Cloud](##Usecase-1:-Relational-data-to-Oracle-Autonomous-Data-Warehouse-Cloud-using-Oracle-Data-Integration-Platform-Cloud)
+4. [Uscase #2: Big data to Oracle Autonomous Data Warehouse Cloud using Oracle Data Lake](#usecase-2:-Big-data-to-Oracle-Autonomous-Data-Warehouse-Cloud-using-Oracle-Data-Lake)
 5. [Uscase #3: External Table](#usecase-#3:-External-Table)
-6. [Uscase #4: Visualization using Oracle Data Visualization Desktop](#usecase-#4:-Visualization-using-Oracle-Data-Visualization-Desktop)
+6. [Uscase #4: Visualization using Oracle Data Visualization Desktop](#usecase-4:-Visualization-using-Oracle-Data-Visualization-Desktop)
 7. [Conclusion](#conclusion)
 
 ## Introduction
@@ -171,7 +171,7 @@ In this section, we go through the features and the provisioning details of the 
     * For more information, please visit [Oracle® Fusion Middleware User’s Guide for Oracle Data Visualization Desktop](https://docs.oracle.com/dvdesktop/latest/desktop/BIDVD/toc.htm).
 
 
-## Usecase #1: Relational data to Oracle Autonomous Data Warehouse Cloud using Oracle Data Integration Platform Cloud
+## Usecase 1: Relational data to Oracle Autonomous Data Warehouse Cloud using Oracle Data Integration Platform Cloud
 * Oracle Database Cloud Service --> Oracle Autonomous Data Warehouse Cloud Service
 
 ![Usecase1](./images/Usecase1.jpg)
@@ -201,7 +201,7 @@ In this section, we go through the features and the provisioning details of the 
 ![Usecase1_6](images/Usecase1_6.jpg)
 
 
-## Usecase #2: Big data to Oracle Autonomous Data Warehouse Cloud using Oracle Data Lake
+## Usecase 2: Big data to Oracle Autonomous Data Warehouse Cloud using Oracle Data Lake
 
 * Oracle Data Lake --> Oracle Autonomous Data Warehouse Cloud
 ![Usecase2](./images/Usecase2.jpg)
@@ -230,7 +230,7 @@ In this section, we go through the features and the provisioning details of the 
 ![Usecase2_6](images/Usecase2_6.jpg)
 
 
-## Usecase #3: External Table
+## Usecase 3: External Table
 * Object Storage --> ADWC
 ![Usecase3](images/Usecase3.jpg)
 * We show how we can create an external table from OCI Object Storage in Oracle Autonomous Data Warehouse Cloud with data still being in the OCI Object Storage but being able to run queries and analysis on this external table in Oracle Autonomous Data Warehouse Cloud.
@@ -249,7 +249,7 @@ In this section, we go through the features and the provisioning details of the 
 
 
 
-## Usecase #4: Visualization using Oracle Data Visualization Desktop
+## Usecase 4: Visualization using Oracle Data Visualization Desktop
 * Oracle Autonomous Data Warehouse Cloud --> Oracle Data Visualization Desktop
 ![Usecase4](images/Usecase4.jpg)
 
