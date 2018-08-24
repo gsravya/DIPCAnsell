@@ -4,16 +4,17 @@ Aug 22, 2018
 Author: Sravya Ganugapati
 ## Index
 1. [Introduction](#introduction)
+1. [Oracle Cloud Services Used](#Oracle-Cloud-Services-Used)
 2. [Usecases Overview](#usecases-overview)
-1. [Oracle Cloud Services Used](#Oracle-cloud-services-used )
+1. [Oracle Cloud Services Overview](#Oracle-Cloud-Services-Overview )
     1. [Oracle Autonomous Data Warehouse Cloud Service](#oracle-autonomous-data-warehouse-cloud-service)
     1. [Oracle Database Cloud Service](#Oracle-Database-Cloud-Service)
     1. [Oracle Data Integration Platform Cloud](#Oracle-Data-Integration-Platform-Cloud)
     1. [Oracle Big Data Cloud](#Oracle-Big-Data-Cloud)
-    1. [Oracle Cloud Infrastructure](#Oracle-Cloud-Infrastructure)
-    1. [Oracle Analytics Cloud](#Oracle-Analytics-Cloud)
-3. [Uscase #1](#usecase-#1)
-4. [Uscase #2](#usecase-#2)
+    1. [Oracle Cloud Infrastructure Object Storage](#Oracle-Cloud-Infrastructure-Object-Storage)
+    1. [Oracle Data Visualization Desktop](#Oracle-Data-Visualization-Desktop)
+3. [Uscase #1: Relational data to Oracle Autonomous Data Warehouse Cloud using Oracle Data Integration Platform Cloud](##Usecase-#1:-Relational-data-to-Oracle-Autonomous-Data-Warehouse-Cloud-using-Oracle-Data-Integration-Platform-Cloud)
+4. [Uscase #2](#usecase-#2:-Big-data-to-Oracle-Autonomous-Data-Warehouse-Cloud-using-Oracle-Data-Lake)
 5. [Uscase #3](#usecase-#3)
 6. [Uscase #4](#usecase-#4)
 7. [Conclusion](#conclusion)
@@ -45,22 +46,22 @@ The goal of these usecases is to consolidate different kinds of data - relationa
 
 Once we have the relational data and the big data in Oracle Autonomous Data Warehouse, we can connect it to Oracle Data Visualization Desktop for preparing reports and visualizations or we can perform data mining and machine learning in the Zeppelin notebooks that come out-of-the-box with Oracle Autonomous Data Warehouse Cloud service. The reports are shareable across the organization and a Data Analyst can run analysis similar to how he or she does on a regular database.
 
-1. ### Usecase #1: Relational data to Oracle Autonomous Data Warehouse Cloud using Oracle Data Integration Platform Cloud
+1. Usecase #1: Relational data to Oracle Autonomous Data Warehouse Cloud using Oracle Data Integration Platform Cloud
 
 ![Usecase1](./images/Usecase1.jpg)
     This usecase explains how we can achieve loading data from a relational database, that could represent on-premise legacy data sources for an organization, into an Oracle Autonomous Data Warehouse Cloud instance. This is implemented using Oracle Data Integrator that is part of Oracle Data Integration Platform Cloud.
 
-2. ### Usecase #2: Big data to Oracle Autonomous Data Warehouse Cloud using Oracle Data Lake (Oracle Big Data Cloud + Oracle Cloud Infrastructure Object Storage)
+2. Usecase #2: Big data to Oracle Autonomous Data Warehouse Cloud using Oracle Data Lake (Oracle Big Data Cloud + Oracle Cloud Infrastructure Object Storage)
 
 ![Usecase2](./images/Usecase2.jpg)
     This usecase shows how we can leverage Oracle Data Lake to run Big Data workloads and push it to Oracle Autonomous Data Warehouse Cloud after data processing.
 
-3. ### Usecase #3: External Table
+3. Usecase #3: External Table
 ![Usecase3](images/Usecase3.jpg)
     In this usecase, we create an external table in Oracle Autonomous Data Warehouse Cloud from Oracle Cloud Infrastructure Object Storage. The data is not brought into Oracle Autonomous Data Warehouse Cloud, but resides in Oracle Cloud Infrastructure Object Storage and on which we can run queries efficiently.
 
-4. ### Usecase #4: Visualization using Oracle Data Visualization Desktop
-![Usevase4](images/Usecase4.jpg)
+4. Usecase #4: Visualization using Oracle Data Visualization Desktop
+![Usecase4](images/Usecase4.jpg)
     In this last usecase, we show how we can connect Oracle Data Visualization Desktop and Oracle Autonomous Data Warehouse Cloud to make visualizations on the consolidated data and to obtain better data inisghts.
 
 ## Oracle Cloud Services Overview
@@ -174,7 +175,101 @@ In this section, we go through the features and the provisioning details of the 
 ## Usecase #1: Relational data to Oracle Autonomous Data Warehouse Cloud using Oracle Data Integration Platform Cloud
 * Oracle Database Cloud Service --> Oracle Autonomous Data Warehouse Cloud Service
 
-## Usecase #2: Big data to Oracle Autonomous Data Warehouse Cloud using Oracle Data Lake (Oracle Big Data Cloud + Oracle Cloud Infrastructure Object Storage)
+![Usecase1](./images/Usecase1.jpg)
+
+* In this usecase, we show how we can achieve loading relational data from legacy data sources to Oracle Autonomous Data Warehouse Cloud instance using Oracle Data Integration Platform Cloud (DIPC).
+* Oracle Data Integration Platform Cloud is a cloud-based platform for data transformation, integration, replication, analysis, and governance. It offers three editions:
+    * **Standard: Oracle Data Integrator**
+        * High-performance Extract Transform and Load functions. With this option, you bulk copy your data sources, and then extract, enrich, and transform your data entities using Oracle Data Integrator.
+    * **Enterprise: Oracle Data Integrator + Oracle Golden Gate**
+        * All elevated integration task execution capabilities, stream analytics, and Big Data technologies on top of Standard Edition.
+    * **Governance: Oracle Data Integrator + Oracle Golden Gate + Oracle Enterprise Data Quality**
+        * Data quality, data profiling, and data governance features in addition to the functionality included in Enterprise Edition. With this option, you profile, cleanse and govern your data sources with customized dashboards. 
+* The source table is *CUSTOMERS_DB* in the source legacy data source system which is Oracle Database Cloud Service in this case.
+![Usecase1_1](images/Usecase1_1.jpg)
+
+* The target table is *CUSTOMERS* table in Oracle Autonomous Data Warehouse CLoud service which is initially empty.
+![Usecase1_2](images/Usecase1_2.jpg)
+
+* We use Oracle Data Integrator (ODI) that comes part of the Oracle Data Integration Platform Cloud service. ODI Studio is an ETL tool used to load data between disparate data systems. The source metadata and the target metadata is brought into ODI Studio after configuring the physical and logical architecture of the source and target systems. A mapping is created from this metadata information which when run will load the data from source to target table.
+![Usecase1_3](images/Usecase1_3.jpg)
+![Usecase1_4](images/Usecase1_4.jpg)
+
+* We can track the status of the load in the Operator tab of the ODI Studio. A green triangle means that the mapping is still running and a green tick indicates that the mapping is finished. You can keep refreshing to know if the status changed.
+![Usecase1_5](images/Usecase1_5.jpg)
+
+* After the mapping is complete, if we refresh the data in the target table *CUSTOMERS* in Oracle Autonomous Data Warehouse Cloud which was initially empty, we can see that the data is now there as ODI loaded the data from *CUSTOMERS_DB* source table.
+![Usecase1_6](images/Usecase1_6.jpg)
+
+
+## Usecase #2: Big data to Oracle Autonomous Data Warehouse Cloud using Oracle Data Lake
+
+* Oracle Data Lake --> Oracle Autonomous Data Warehouse Cloud
+![Usecase2](./images/Usecase2.jpg)
+
+* Oracle Data Lake = Oracle Big Data Cloud + Oracle Cloud Infrastructure Object Storage
+* This usecase demonstrates how we can process big data workloads in Oracle Big Data Cloud and then push it to Oracle Cloud Infrastructure Object Storage (OCI Object Storage) from where we can load it to Autonomous Data Warehouse Cloud instance.
+
+* We have a source csv file *sales.csv* which is stored in HDFS storage of the BDC cluster instance. Then we follow the below steps to push it to Oracle Autonomous Data Warehouse Cloud finally:
+    * Create a Hive table *SALES* from that csv and process it in Oracle Big Data Cloud
+    * Store the Hive table *SALES* which is processed as a CSV file *sales.csv* in HDFS of Oracle Big Data Cloud instance.
+
+        ![Usecase2_1](images/Usecase2_1.jpg)
+
+    * Push *sales.csv* from Oracle BDC HDFS to OCI Object Storage.
+        ![Usecase2_2](images/Usecase2_2.jpg)
+* We can see that the *sales.csv* file is pushed to OCI Object Storage in one of the buckets.
+![Usecase2_3](images/Usecase2_3.jpg)
+
+* Now, we have to load this csv file from OCI Object Storage into Oracle Autonomous Data Warehouse Cloud table *SALES* which is initially empty as can be seen from the following figure.
+![Usecase2_4](images/Usecase2_4.jpg)
+
+* We use *copy_data()* function of the *DBMS_CLOUD* PL/SQL package that comes out-of-the-box with Oracle Autonomous Data Warehouse Cloud instance to pull data from OCI Object Storage into the target table *SALES*.
+![Usecase2_5](images/Usecase2_5.jpg)
+
+* After we run the PL/SQL code in the SQL Developer connection of the Oracle Autonomous Data Warehouse Cloud, if we refresh the data tab of the *SALES* table and we can see that now, the table is not empty and is loaded with data from *sales.csv* of the OCI Object Storage.
+![Usecase2_6](images/Usecase2_6.jpg)
+
+
 ## Usecase #3: External Table
+* Object Storage --> ADWC
+![Usecase3](images/Usecase3.jpg)
+* We show how we can create an external table from OCI Object Storage in Oracle Autonomous Data Warehouse Cloud with data still being in the OCI Object Storage but being able to run queries and analysis on this external table in Oracle Autonomous Data Warehouse Cloud.
+
+* The source data is in the file *products.csv* which is stored in OCI Object Storage.
+![Usecase3_1](images/Usecase3_1.jpg)
+
+* The target table is *PRODUCTS_EXT* in Oracle Autonomous Data Warehouse Cloud which is not existing initially as we can see from the following figure.
+![Usecase3_2](images/Usecase3_2.jpg)
+
+* We use *create_external_table()* function of the *DBMS_CLOUD* PL/SQL package that comes out-of-the-box with Oracle Autonomous Data Warehouse Cloud instance to create an external table from the OCI Object Storage.
+![Usecase3_3](images/Usecase3_3.jpg)
+
+* After we run the PL/SQL code in the SQL Developer connection of the Oracle Autonomous Data Warehouse Cloud, if we refresh the data tab of the *PRODUCTS_EXT* table and we can see that now, the table is populated with data from the file in the OCI Object Storage where the data actually resides.
+![Usecase3_4](images/Usecase3_4.jpg)
+
+
+
 ## Usecase #4: Visualization using Oracle Data Visualization Desktop
+* Oracle Autonomous Data Warehouse Cloud --> Oracle Data Visualization Desktop
+![Usecase4](images/Usecase4.jpg)
+
+* We show how we can prepare visualizations and reports on the data present in Oracle Autonomous Data Warehouse Cloud in this usecase.
+
+* Once we have all the data - relational and big data - in one place, we can connect Oracle Data Visualization Desktop to Oracle Autonomous Data Warehouse Cloud to run a consolidated analysis on the three tables *CUSTOMERS*, *SALES*, *PRODUCTS_EXT*.
+
+* Create a consolidated view *REPORT* in Oracle Autonomous Data Warehouse Cloud that has the data which illustartes how much each customer spent in each product category.
+![Usecase4_1](images/Usecase4_1.jpg)
+* To connect from Oracle Data Visualization Desktop to Oracle Autonomous Data Warehouse Cloud, click on Create and then click on Connection.
+![Usecase4_2](images/Usecase4_2.jpg)
+* Select Oracle Autonomous Data Warehouse from the list of connections.
+![Usecase4_3](images/Usecase4_3.jpg)
+* Provide connection details for the Autonomous Data Warehouse Cloud instance which can be found in the tnsnames.ora file of the Client Credential wallet zip file downloaded from the ADWC console.
+![Usecase4_4](images/Usecase4_4.jpg)
+* Once the connection is successful, you can select which table or view you need to visualize on Oracle Data Visualization Desktop. Here we select *REPORT* view created earlier. Drag and drop the fields from the *REPORT* view to create a stacked bar chart that shows how much each customer spent on each product category.
+![Usecase4_5](images/Usecase4_5.jpg)
+
+
 ## Conclusion
+
+In this demo, we illustrated how we can achieve data integration between different data sources, especially relational and big data in Oracle Autonomous Data Warehouse Cloud service using Oracle Cloud.
