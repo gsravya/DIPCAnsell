@@ -14,11 +14,10 @@ Author: Sravya Ganugapati
     1. [Oracle Cloud Infrastructure Object Storage](#Oracle-Cloud-Infrastructure-Object-Storage)
     1. [Oracle Data Visualization Desktop](#Oracle-Data-Visualization-Desktop)
 3. [Uscase #1: Relational data to Oracle Autonomous Data Warehouse Cloud using Oracle Data Integration Platform Cloud](##Usecase-#1:-Relational-data-to-Oracle-Autonomous-Data-Warehouse-Cloud-using-Oracle-Data-Integration-Platform-Cloud)
-4. [Uscase #2](#usecase-#2:-Big-data-to-Oracle-Autonomous-Data-Warehouse-Cloud-using-Oracle-Data-Lake)
-5. [Uscase #3](#usecase-#3)
-6. [Uscase #4](#usecase-#4)
+4. [Uscase #2: Big data to Oracle Autonomous Data Warehouse Cloud using Oracle Data Lake](#usecase-#2:-Big-data-to-Oracle-Autonomous-Data-Warehouse-Cloud-using-Oracle-Data-Lake)
+5. [Uscase #3: External Table](#usecase-#3:-External-Table)
+6. [Uscase #4: Visualization using Oracle Data Visualization Desktop](#usecase-#4:-Visualization-using-Oracle-Data-Visualization-Desktop)
 7. [Conclusion](#conclusion)
-8. [dkhjf](#Oracle-Autonomous-Data-Warehouse-Cloud-Service)
 
 ## Introduction
 This demo will walk you through the different usecases that achieve data integration of different data sources, especially big data and relational data in one place - Oracle Autonomous Data Warehouse Cloud - using Oracle cloud products and services. To try Oracle Cloud services, please visit [Oracle Cloud](http://cloud.oracle.com) and sign up for a free trial account worth $300. 
