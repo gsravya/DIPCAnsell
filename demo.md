@@ -4,7 +4,7 @@ Aug 22, 2018
 Author: Sravya Ganugapati
 ## Index
 1. [Introduction](#introduction)
-1. [Oracle Cloud Services Used](#Oracle-Cloud-Services-Used)
+1. [Oracle Cloud Services Used](#oracle-cloud-services-used)
 2. [Usecases Overview](#usecases-overview)
 1. [Oracle Cloud Services Overview](#Oracle-Cloud-Services-Overview )
     1. [Oracle Autonomous Data Warehouse Cloud Service](#oracle-autonomous-data-warehouse-cloud-service)
