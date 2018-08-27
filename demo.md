@@ -39,7 +39,7 @@ which provides consistently better performing and more secure environments.
 
 
 ## Usecases Overview
-The goal of these usecases is to consolidate different kinds of data - relational and big data, in this demo - in one place such as [Oracle Autonomous Data Warehouse Cloud](https://cloud.oracle.com/en_US/datawarehouse). Here is the overall architecture of this demo.
+The goal of these usecases is to consolidate different kinds of data - relational and big data, in this demo - in one place such as [Oracle Autonomous Data Warehouse Cloud](https://cloud.oracle.com/en_US/datawarehouse). Here is the overall architecture of this demo. Don't be overwhelmed, we will explain more in detail in the coming sections.
 
 ![OverviewArchitecture](./images/OverviewArchitecture.jpg)
 
@@ -69,7 +69,7 @@ In this section, we go through the features and the provisioning details of the 
 
 1. ### Oracle Autonomous Data Warehouse Cloud Service
     #### Provisioning
-    * The Oracle Autonomous Data Warehouse is provisioned in a very easy and a quick way - you just need a couple of details suchas how much storage and CPU you need and an admin password. The provisioning takes around 30 seconds to 1 minute and you are ready to use your instance!
+    * The Oracle Autonomous Data Warehouse is provisioned in a very easy and a quick way - you just need a couple of details such as how much storage and CPU you need and an admin password. The provisioning takes around 30 seconds to 1 minute and you are ready to use your instance!
 
     * Here are the steps to follow for provisioning an Oracle Autonomous Data Warehouse Cloud Service instance.
 
@@ -95,7 +95,7 @@ In this section, we go through the features and the provisioning details of the 
     ![ConnToAdwc2](images/ConnToAdwc2.jpg)
     
     #### Workshop Link
-    * To learn more in detail about how to provision and other information about Oracle Autonomous Data Warehouse Cloud, please visit [Oracle ADWC Workshop](https://oracle.github.io/learning-library/workshops/journey4-adwc/?page=README.md)
+    * To learn more in detail about how to provision and other information about Oracle Autonomous Data Warehouse Cloud, please visit [Oracle ADWC Workshop](https://oracle.github.io/learning-library/workshops/journey4-adwc/?page=README.md).
 
 1. ### Oracle Database Cloud Service
     #### Features
@@ -122,7 +122,7 @@ In this section, we go through the features and the provisioning details of the 
 
     #### Provisioning
 
-    * For provisioning information and a similar workshop, please visit [Using Oracle Data Integration Platform Cloud (DIPC) with ADWC](https://oracle.github.io/learning-library/workshops/journey4-adwc/?page=LabGuideDIPC.md)
+    * For provisioning information and a workshop, please visit [Using Oracle Data Integration Platform Cloud (DIPC) with ADWC](https://oracle.github.io/learning-library/workshops/journey4-adwc/?page=LabGuideDIPC.md)
 
 1. ### Oracle Big Data Cloud
     #### Features
@@ -187,7 +187,7 @@ In this section, we go through the features and the provisioning details of the 
 * The source table is *CUSTOMERS_DB* in the source legacy data source system which is Oracle Database Cloud Service in this case.
 ![Usecase1_1](images/Usecase1_1.jpg)
 
-* The target table is *CUSTOMERS* table in Oracle Autonomous Data Warehouse CLoud service which is initially empty.
+* The target table is *CUSTOMERS* table in Oracle Autonomous Data Warehouse Cloud service which is initially empty.
 ![Usecase1_2](images/Usecase1_2.jpg)
 
 * We use Oracle Data Integrator (ODI) that comes part of the Oracle Data Integration Platform Cloud service. ODI Studio is an ETL tool used to load data between disparate data systems. The source metadata and the target metadata is brought into ODI Studio after configuring the physical and logical architecture of the source and target systems. A mapping is created from this metadata information which when run will load the data from source to target table.
