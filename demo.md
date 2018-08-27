@@ -3,7 +3,7 @@ Aug 22, 2018
 
 Author: Sravya Ganugapati
 ## Index
-1. [Introduction](#introduction)
+1. [Introduction](#introduction:-testtest)
 1. [Oracle Cloud Services Used](#Oracle-Cloud-Services-Used)
 2. [Usecases Overview](#usecases-overview)
 1. [Oracle Cloud Services Overview](#Oracle-Cloud-Services-Overview )
@@ -19,7 +19,7 @@ Author: Sravya Ganugapati
 6. [Usecase 4: Visualization using Oracle Data Visualization Desktop](#Usecase-4:-Visualization-using-Oracle-Data-Visualization-Desktop)
 7. [Conclusion](#conclusion)
 
-## Introduction
+## Introduction: testtest
 This demo will walk you through the different usecases that achieve data integration of different data sources, especially big data and relational data in one place - Oracle Autonomous Data Warehouse Cloud - using Oracle cloud products and services. To try Oracle Cloud services, please visit [Oracle Cloud](http://cloud.oracle.com) and sign up for a free trial account worth $300. 
 
 Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous database that scales elastically, delivers fast query performance and requires no database administration.
